@@ -30,12 +30,9 @@ const CustomerList = () => {
   useEffect(() => {
     fetchCustomers()
 
-    // Show success message if redirected with one
     if (location.state?.success) {
       setSuccessMessage(location.state.success)
-      // Clear message after 3 seconds
       setTimeout(() => setSuccessMessage(''), 3000)
-      // Clean up state to prevent repeated messages on refresh
       window.history.replaceState({}, document.title)
     }
   }, [location.state])
@@ -44,7 +41,6 @@ const CustomerList = () => {
 
   return (
     <div className="customer-table-container">
-      {/* Reserved space for message */}
       <div className="message-wrapper">
         {successMessage && (
           <div className="success-banner">{successMessage}</div>

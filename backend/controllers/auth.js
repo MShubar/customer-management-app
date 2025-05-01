@@ -28,14 +28,13 @@ const loginUser = async (req, res) => {
   }
 }
 const logoutUser = async (req, res) => {
-  const token = req.headers['authorization']?.split(' ')[1] // Extract the token from the Authorization header
+  const token = req.headers['authorization']?.split(' ')[1]
 
   if (!token) {
     return res.status(400).json({ message: 'No token provided' })
   }
 
   try {
-    // Add the token to the blacklist
     const db = await getDbConnection()
     await db.run('INSERT INTO blacklisted_tokens (token) VALUES (?)', [token])
 

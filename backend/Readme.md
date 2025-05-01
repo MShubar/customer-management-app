@@ -34,6 +34,20 @@ npm install
 nodemon
 ```
 
+## Dependencies
+
+"bcrypt": "^5.1.1",
+"bcryptjs": "^3.0.2",
+"body-parser": "^2.2.0",
+"cors": "^2.8.5",
+"dotenv": "^16.5.0",
+"express": "^5.1.0",
+"express-session": "^1.18.1",
+"jsonwebtoken": "^9.0.2",
+"nodemon": "^3.1.10",
+"sqlite": "^5.1.1",
+"sqlite3": "^5.1.7"
+
 ## Port of the backend
 
 ```backend
