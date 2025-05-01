@@ -8,7 +8,11 @@ const app = express()
 require('dotenv').config()
 const SESSION_SECRET = process.env.SESSION_SECRET || 'default-secret'
 const PORT = process.env.PORT || 5000
-app.use(cors())
+app.use(
+  cors({
+    origin: 'http://localhost:5173'
+  })
+)
 app.use(bodyParser.json())
 app.use(express.json())
 app.use(
